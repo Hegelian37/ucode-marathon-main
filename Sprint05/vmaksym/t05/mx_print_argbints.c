@@ -1,0 +1,18 @@
+#include <stdbool.h>
+
+bool mx_isdigit(int c);
+bool mx_isspace(char c);
+int mx_atoi(const char *str);
+void mx_printchar(char c);
+void mx_printint(int n);
+int main(int argc, char *argv[])
+{
+	for (int i = 0; (++i) < argc; mx_printchar('\n'))
+	{
+		for (int j = 31; j >= 0; j--)
+		{
+			mx_printchar(((mx_atoi(argv[i]) >> j) & 1) + '0');
+		}
+	}
+}
+
